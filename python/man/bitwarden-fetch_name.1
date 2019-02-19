@@ -1,0 +1,29 @@
+.TH "BITWARDEN FETCH_NAME" "1" "24-Jan-2019" "" "bitwarden fetch_name Manual"
+.SH NAME
+bitwarden\-fetch_name \- fetch by name.
+.SH SYNOPSIS
+.B bitwarden fetch_name
+[OPTIONS] NAME
+.SH DESCRIPTION
+fetch by name.
+.PP
+This will be relatively slow, as it has to decrypt every single name
+to compare before it finds the right one.
+.PP
+--pwonly (or -p) will return ONLY the password, in decrypted form.
+--decrypted (or -d) will return the json object with all
+    encrypted fields decrypted, except the password.
+--fulldecrypt just like --decrypted, except will return
+    the password decrypted as well.
+.PP
+output format is always pretty printed JSON, unless --pwonly is set.
+.SH OPTIONS
+.TP
+\fB\-p,\fP \-\-pwonly
+.PP
+.TP
+\fB\-d,\fP \-\-decrypt / \-\-no\-decrypt
+.PP
+.TP
+\fB\-\-fulldecrypt\fP
+.PP

@@ -1,0 +1,14 @@
+.TH "BITWARDEN STATUS" "1" "24-Jan-2019" "" "bitwarden status Manual"
+.SH NAME
+bitwarden\-status \- Show various statistics.
+.SH SYNOPSIS
+.B bitwarden status
+[OPTIONS]
+.SH DESCRIPTION
+Show various statistics.
+.PP
+Advanced examples:
+get last sync time:
+    bw status | grep Sync| cut -f 2
+get agent pid if it is running:
+    bw status | grep PID | cut -f 2

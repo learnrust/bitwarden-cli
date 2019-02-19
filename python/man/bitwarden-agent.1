@@ -1,0 +1,34 @@
+.TH "BITWARDEN AGENT" "1" "24-Jan-2019" "" "bitwarden agent Manual"
+.SH NAME
+bitwarden\-agent \- Agent command lets you manage the agent.
+.SH SYNOPSIS
+.B bitwarden agent
+[OPTIONS] [CMD]
+.SH DESCRIPTION
+Agent command lets you manage the agent.
+.PP
+without an cmd argument, it will show the PID of the agent or None if not running.
+.PP
+.PP
+with a cmd arg of start, it will ask for your password (and maybe email if not stored in config)
+        and then create the master key and startup the agent.
+    --timeout is optional and is how long the agent should run for in seconds.
+    If set to a negative value (say -t -1) then the agent
+    will never stop, until you call the logout command.
+        defaults to 3,600 seconds == 60 minutes == 1hr.
+.PP
+    --email is optional, as it remembers the email from previous logins.
+.PP
+.PP
+with a cmd arg of stop, it will stop the agent, and erase the master key.
+        
+.SH OPTIONS
+.TP
+\fB\-t,\fP \-\-timeout INTEGER
+.PP
+.TP
+\fB\-\-password\fP TEXT
+.PP
+.TP
+\fB\-\-email\fP TEXT
+.PP

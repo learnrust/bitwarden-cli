@@ -1,0 +1,80 @@
+.TH "BITWARDEN" "1" "24-Jan-2019" "" "bitwarden Manual"
+.SH NAME
+bitwarden \- Bitwarden CLI program.
+.SH SYNOPSIS
+.B bitwarden
+[OPTIONS] COMMAND [ARGS]...
+.SH DESCRIPTION
+Bitwarden CLI program.
+.SH OPTIONS
+.TP
+\fB\-v,\fP \-\-verbosity LVL
+Either CRITICAL, ERROR, WARNING, INFO or DEBUG
+.TP
+\fB\-\-url\fP TEXT
+.PP
+.TP
+\fB\-\-identurl\fP TEXT
+.PP
+.TP
+\fB\-\-debug\fP / \-\-no\-debug
+.PP
+.TP
+\fB\-\-db\fP TEXT
+.PP
+.TP
+\fB\-\-version\fP
+Show the version and exit.
+.SH COMMANDS
+.PP
+\fBstatus\fP
+  Show various statistics.
+  See \fBbitwarden-status(1)\fP for full documentation on the \fBstatus\fP command.
+.PP
+\fBfetch_name\fP
+  fetch by name.
+  See \fBbitwarden-fetch_name(1)\fP for full documentation on the \fBfetch_name\fP command.
+.PP
+\fBemtpydb\fP
+  Flush and empty the database of all values.
+  See \fBbitwarden-emtpydb(1)\fP for full documentation on the \fBemtpydb\fP command.
+.PP
+\fBlogin\fP
+  login to server; MFA optional.
+  See \fBbitwarden-login(1)\fP for full documentation on the \fBlogin\fP command.
+.PP
+\fBfind\fP
+  find query in username,uri this does a simpe...
+  See \fBbitwarden-find(1)\fP for full documentation on the \fBfind\fP command.
+.PP
+\fBfetch_uuid\fP
+  fetch by UUID.
+  See \fBbitwarden-fetch_uuid(1)\fP for full documentation on the \fBfetch_uuid\fP command.
+.PP
+\fBregister\fP
+  register a new account on server.
+  See \fBbitwarden-register(1)\fP for full documentation on the \fBregister\fP command.
+.PP
+\fBconfig\fP
+  View and set bitwarden config items.
+  See \fBbitwarden-config(1)\fP for full documentation on the \fBconfig\fP command.
+.PP
+\fBagent\fP
+  Agent command lets you manage the agent.
+  See \fBbitwarden-agent(1)\fP for full documentation on the \fBagent\fP command.
+.PP
+\fBslab\fP
+  run in slab mode.
+  See \fBbitwarden-slab(1)\fP for full documentation on the \fBslab\fP command.
+.PP
+\fBsql\fP
+  query the local data store using SQL.
+  See \fBbitwarden-sql(1)\fP for full documentation on the \fBsql\fP command.
+.PP
+\fBlogout\fP
+  logout from server, stop agent and forget all...
+  See \fBbitwarden-logout(1)\fP for full documentation on the \fBlogout\fP command.
+.PP
+\fBpull\fP
+  pull all records from server, updating local...
+  See \fBbitwarden-pull(1)\fP for full documentation on the \fBpull\fP command.

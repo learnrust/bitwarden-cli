@@ -1,0 +1,58 @@
+.TH "BITWARDEN CONFIG" "1" "24-Jan-2019" "" "bitwarden config Manual"
+.SH NAME
+bitwarden\-config \- View and set bitwarden config items.
+.SH SYNOPSIS
+.B bitwarden config
+[OPTIONS] [KEY] [VALUE]
+.SH DESCRIPTION
+View and set bitwarden config items.
+.PP
+    no arguments will list all keys and their values.
+    1 argument will show the value for that key
+    with 2 args will set a value for that key.
+.PP
+    2 items are not shown in the all list, because their values are "sensitive":
+    ('client_token', 'encryption_key')
+.PP
+    client_token is the JSON value returned from the login command and
+    encryption key is the encypted symmetric key (requires the master key to
+    decrypt, which is stored in the agent)
+.PP
+    You can view these if you specifically ask for them (and even set their
+    values) but setting the values by hand is almost always a bad idea, you
+    have been warned.
+.PP
+    You can of course format the output any way you so choose.
+    Why you would want the output in XLS format is beyond me.
+.PP
+
+NOTES:
+----------
+.PP
+Default values are computed at runtime and are not shown here.
+.PP
+
+EXAMPLES:
+----------------
+.PP
+
+bitwarden config email
+key  |value
+-----|------------
+email|nobody@example.com
+.PP
+show the email setting.
+.PP
+
+bitwarden config email somebodylovesme@example.com
+key  |old value         |new value
+-----|------------------|---------------------------
+email|nobody@example.com|somebodylovesme@example.com
+.PP
+will set the login email to nobody@example.com
+.PP
+   
+.SH OPTIONS
+.TP
+\fB\-f,\fP \-\-fmt [csv|tsv|json|yaml|html|xls|xlsx|dbf|latex|ods]
+.PP

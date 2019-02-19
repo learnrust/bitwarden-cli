@@ -1,0 +1,4 @@
+[console_scripts]
+bitwarden = bitwarden.main:cli
+bitwarden-agent = bitwarden.agent:main
+

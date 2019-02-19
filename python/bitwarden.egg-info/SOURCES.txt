@@ -1,0 +1,15 @@
+README.md
+setup.py
+bitwarden/__init__.py
+bitwarden/agent.py
+bitwarden/client.py
+bitwarden/crypto.py
+bitwarden/db.py
+bitwarden/main.py
+bitwarden/slab.py
+bitwarden.egg-info/PKG-INFO
+bitwarden.egg-info/SOURCES.txt
+bitwarden.egg-info/dependency_links.txt
+bitwarden.egg-info/entry_points.txt
+bitwarden.egg-info/requires.txt
+bitwarden.egg-info/top_level.txt

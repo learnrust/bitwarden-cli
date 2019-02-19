@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to Bitwarden CLI’s documentation! &#8212; Bitwarden CLI 0.3.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-bitwarden-cli-s-documentation">
+<h1>Welcome to Bitwarden CLI’s documentation!<a class="headerlink" href="#welcome-to-bitwarden-cli-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Cross Platform Bitwarden library and CLI with sudolikeaboss functionality.</p>
+<p>Source repo lives &#64; <a class="reference external" href="https://fossil.birl.ca/bitwarden-cli/home">https://fossil.birl.ca/bitwarden-cli/home</a>
+But is mirrored to github:
+<a class="reference external" href="https://github.com/birlorg/bitwarden-cli">https://github.com/birlorg/bitwarden-cli</a></p>
+<p>The repository houses both rust and python versions. The python version is more feature complete,
+and is meant as a useable proof of concept or minimally viable program. It’s still up for decision
+how much functionality will be in the rust version, at least the crypto and the agent will be fully implemented.
+Ideally the entire program would be in Rust, but rust is still a very new language and all the magic happy
+libraries one might want are not as fleshed out as the very mature python ecosystem.</p>
+<p>This program, documentation, sources, etc. currently have no relationship with Bitwarden proper,
+other than the main author pays a Families subscription fee, despite my actual Ciphers being stored in an off-line
+self-hosted version of Bitwarden. Just because bitwarden <em>can</em> run over the public internet doesn’t mean it has to.</p>
+<p>Historic fun fact: all crypto code needed to be written and stored outside
+of the USA at one time.</p>
+<dl class="docutils">
+<dt>Goals:</dt>
+<dd><ul class="first last simple">
+<li>Be a useful bitwarden tool that works on Windows and Modern POSIX(macOS, BSD, Linux, etc) platforms.</li>
+<li>Be able to work off-line completely if you wish. This mostly works now.</li>
+</ul>
+</dd>
+<dt>Non-Goals:</dt>
+<dd><ul class="first simple">
+<li>GUI’s because writing them is misery. Bitwarden writes these for us, go pay</li>
+</ul>
+<p class="last">them (regardless of self-hosted or not), I do.</p>
+</dd>
+</dl>
+<p>The idea behind the CLI here is to think of the server as a place to push / pull
+againt.  The local copy of the DB should be resilient and not erase anything
+ever without explicitly saying so, so that full historic backups are possible.
+think more like revision control. This is not fully fleshed out, at the time
+of this writing..</p>
+<div class="section" id="documentation-contents">
+<h2>Documentation Contents<a class="headerlink" href="#documentation-contents" title="Permalink to this headline">¶</a></h2>
+<p>This part of the documentation guides you through all of the library’s
+usage patterns.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Bitwarden CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#bitwarden">bitwarden</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html#commands">Commands:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#login">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#logout">logout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#register">register</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#pull">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#config">config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#agent">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#fetch-name">fetch_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#fetch-uuid">fetch_uuid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#find">find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#slab">slab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#status">status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#sql">sql</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security.html#python-for-security-code">Python, for security code?!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="crypto.html">Cryptography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#cipherstrings">CipherStrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#getting-a-decryptionkey-and-mackey">Getting a decryptionKey and macKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#decryption">Decryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#encryption">Encryption</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<p>If you are looking for information on a specific function, class, or
+method, this part of the documentation is for you.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="internals.html">Internals</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to Bitwarden CLI’s documentation!</a><ul>
+<li><a class="reference internal" href="#documentation-contents">Documentation Contents</a></li>
+<li><a class="reference internal" href="#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="installation.html" title="next chapter">Installation</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Birl Org.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

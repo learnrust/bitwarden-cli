@@ -1,0 +1,33 @@
+.TH "BITWARDEN SLAB" "1" "24-Jan-2019" "" "bitwarden slab Manual"
+.SH NAME
+bitwarden\-slab \- run in slab mode.
+.SH SYNOPSIS
+.B bitwarden slab
+[OPTIONS]
+.SH DESCRIPTION
+run in slab mode.
+.PP
+    iterm2 coprocess command:
+.PP
+export LANG=en_CA.UTF-8;export LOCALE=en_CA.UTF-8; /usr/local/bin/bitwarden slab
+.PP
+    You may need to change the LOCAL and LANG settings and the path above.
+.PP
+        which bitwarden
+.PP
+    should get you the path. and echo $LANG should get you the locale and lang
+    settings.
+.PP
+    slab mode searches and displays only uri's that equal:
+    sudolikeaboss://local
+.PP
+        To use FZF:
+        
+        bw config slab_location `which fzf`
+.PP
+        and it will work with fzf if you want. or  any other chooser.
+.PP
+    I recommend: brew install choose-gui. and then bitwarden slab will be all
+    the more amazing. more info on the chooser here:
+    https://github.com/sdegutis/choose
+    

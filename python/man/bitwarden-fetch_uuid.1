@@ -1,0 +1,28 @@
+.TH "BITWARDEN FETCH_UUID" "1" "24-Jan-2019" "" "bitwarden fetch_uuid Manual"
+.SH NAME
+bitwarden\-fetch_uuid \- fetch by UUID.
+.SH SYNOPSIS
+.B bitwarden fetch_uuid
+[OPTIONS] UUID
+.SH DESCRIPTION
+fetch by UUID.
+.PP
+This will be quite fast, as it only has to decrypt 1 cipher record.
+.PP
+--pwonly (or -p) will return ONLY the password, in decrypted form.
+--decrypted (or -d) will return the json object with all
+    encrypted fields decrypted, except the password.
+--fulldecrypt just like --decrypted, except will return
+    the password decrypted as well.
+.PP
+output format is always pretty printed JSON, unless --pwonly is set.
+.SH OPTIONS
+.TP
+\fB\-p,\fP \-\-pwonly
+.PP
+.TP
+\fB\-d,\fP \-\-decrypt / \-\-no\-decrypt
+.PP
+.TP
+\fB\-\-fulldecrypt\fP
+.PP

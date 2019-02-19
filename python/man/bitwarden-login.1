@@ -1,0 +1,56 @@
+.TH "BITWARDEN LOGIN" "1" "24-Jan-2019" "" "bitwarden login Manual"
+.SH NAME
+bitwarden\-login \- login to server; MFA optional.
+.SH SYNOPSIS
+.B bitwarden login
+[OPTIONS] [EMAIL]
+.SH DESCRIPTION
+login to server; MFA optional.
+.PP
+    --timeout is how long the agent should run for in seconds.
+    By default (value of 0) timeout will be set to the length of the login
+    access token defined by the server.
+    If set to a negative value (say -t -1) then the agent
+    will never stop, until you call the logout command.
+.PP
+    email is optional, as it remembers the email from previous logins.
+.PP
+MFA Support:
+    --mfa is optional, if you turn it on and don't specify --mfa_token it will
+    prompt you.  None of these modes do anything
+    other than let you specify the MFA token to send. so DUO and email may not work.
+.PP
+    example:
+        $ bitwarden login nobody@example.com
+        Password:
+.PP
+        self hosted (bitwarden-ruby or bitwarden-go):
+.PP
+        login to a self-hosted server at bitwarden.example.com URL. With an
+        8hr agent timeout(so you can work offline all day).
+.PP
+        bitwarden --url https://bitwarden.example.com/api --identurl
+        https://bitwarden.example.com/identity login nobody@example.com
+        --timeout 28800
+.PP
+    NOTES:
+        * if you login to a self-hosted instance, you *MUST* set both
+        --url and --identurl see above example for likely settings.
+        * --timeout does not change the access token server timeout.
+            so server operations may require you to re-login.
+        * --url and --identurl are saved for you, so you only have
+            to define them one time.
+    
+.SH OPTIONS
+.TP
+\fB\-t,\fP \-\-timeout INTEGER
+.PP
+.TP
+\fB\-\-password\fP TEXT
+.PP
+.TP
+\fB\-\-mfa\fP [u2f|yubikey|duo|authenticator|email]
+.PP
+.TP
+\fB\-\-mfa_token\fP TEXT
+.PP

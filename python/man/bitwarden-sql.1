@@ -1,0 +1,38 @@
+.TH "BITWARDEN SQL" "1" "24-Jan-2019" "" "bitwarden sql Manual"
+.SH NAME
+bitwarden\-sql \- query the local data store using SQL.
+.SH SYNOPSIS
+.B bitwarden sql
+[OPTIONS] QUERY
+.SH DESCRIPTION
+query the local data store using SQL.
+.PP
+Basically just a wrapper around the records CLI
+see https://github.com/kennethreitz/records for more info.
+.PP
+you can get the results back in pretty much any format you wish
+with --fmt:
+['csv', 'tsv', 'json', 'yaml', 'html', 'xls', 'xlsx', 'dbf', 'latex', 'ods']),
+.PP
+Query: can either be a filename to run or a SQL query string.
+.PP
+Query Parameters:
+    Query parameters can be specified in key=value format, and injected
+    into your query in :key format e.g.:
+.PP
+    
+    $ bitwarden sql 'select created_at from ciphers where uuid ~= :uuid' -p uuid=84c1bf0a-b0e8-49c4-8e58-8d0fc0a247c4
+.PP
+Examples:
+    show all uuid entries:
+        bw sql "select uuid from ciphers where uuid is not null"
+.PP
+    show all local config settings and their values if they are defined:
+        bw sql "select key, value from config" -f tsv
+.SH OPTIONS
+.TP
+\fB\-p,\fP \-\-params TEXT
+.PP
+.TP
+\fB\-f,\fP \-\-fmt [csv|tsv|json|yaml|html|xls|xlsx|dbf|latex|ods]
+.PP

@@ -1,0 +1,28 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+requests = "*"
+records = "*"
+cryptography = "*"
+click = "*"
+click-log = "*"
+webpy = {git = "https://github.com/webpy/webpy"}
+python-daemon = "*"
+psutil = "*"
+pystandardpaths = "*"
+click-man = "*"
+
+
+[dev-packages]
+
+pytest = "*"
+pylint = "*"
+yapf = "*"
+sphinx = "*"
+sphinx-click = "*"

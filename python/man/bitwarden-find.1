@@ -1,0 +1,34 @@
+.TH "BITWARDEN FIND" "1" "24-Jan-2019" "" "bitwarden find Manual"
+.SH NAME
+bitwarden\-find \- find query in username,uri this does a simpe...
+.SH SYNOPSIS
+.B bitwarden find
+[OPTIONS] QUERY
+.SH DESCRIPTION
+find query in username,uri
+.PP
+ this does a simpe python string find i.e.:
+.PP
+     if query in username:
+.PP
+ but searches against username and first url
+.PP
+ You can export it in almost any format you wish with -f
+.PP
+ to get the password once you found an entry use fetch_uuid
+.PP
+ complicated example:
+.PP
+ 
+ bw find example.com -f tsv --no-headers | fzf | cut -f 1 | xargs bitwarden fetch_uuid -p
+.PP
+which means: find all entries with example.com in them, using fzf
+to select a record and return only the password.
+ 
+.SH OPTIONS
+.TP
+\fB\-f,\fP \-\-fmt [csv|tsv|json|yaml|html|xls|xlsx|dbf|latex|ods]
+.PP
+.TP
+\fB\-\-headers\fP / \-\-no\-headers
+.PP
