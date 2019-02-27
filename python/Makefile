@@ -14,6 +14,7 @@ clean:
 test:
 	#pytest
 	# for Fedora/CentOS
-	/usr/bin/py.test-3
+	#/usr/bin/py.test-3
+	/usr/bin/py.test
 
 .PHONY: release test
