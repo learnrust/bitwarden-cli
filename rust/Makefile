@@ -22,6 +22,7 @@ clean:
 	cargo clean
 	rm -f test.txt release.txt
 	rm -f /target/debian/*.deb ./target/release/rpmbuild/RPMS/x86_64/*.rpm
+	find src  -type f -name "*.ps" -exec rm -f {} \;
 
 tree: clean
 	tree -L 4 > ${PROJECT_NAME}-dir-layout.txt
