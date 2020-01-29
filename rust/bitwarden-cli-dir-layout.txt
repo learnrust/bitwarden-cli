@@ -1,0 +1,18 @@
+.
+├── bitwarden-cli-dir-layout.txt
+├── Cargo.lock
+├── Cargo.toml
+├── deb.md
+├── Makefile
+├── README.md
+├── rpm.md
+└── src
+    ├── bin
+    │   └── agent.rs
+    ├── cli.yaml
+    ├── crypto.rs
+    ├── lib.rs
+    ├── main.rs
+    └── Makefile.pdf
+
+2 directories, 13 files
