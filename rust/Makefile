@@ -66,4 +66,4 @@ pdf:
 	cd  /tmp;ps2pdf crypto.rs.ps   crypto.rs.pdf
 	cd  /tmp;ps2pdf lib.rs.ps      lib.rs.pdf
 	cd  /tmp;ps2pdf main.rs.ps     main.rs.pdf
-	cp /tmp/*.pdf ../docs
+	cp /tmp/*.pdf /docs
