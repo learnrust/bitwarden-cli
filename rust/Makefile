@@ -39,4 +39,31 @@ push:
 	git commit -am "$(call args, Automated lazy commit message without details, read the code change)"  && git push
 
 diff:
-	git diff 
+	git diff
+
+
+# docs
+#A2PS2S1C  = /bin/a2ps --sides=2 --medium=Letter --columns=1 --portrait --line-numbers=1 --font-size=8 --font-size=8 $@ --output=./$@.ps
+A2PS2S1C  = ./a2ps2s1c.bash 
+#a2ps --sides=2 --medium=Letter --columns=1 --portrait --line-numbers=1 --font-size=8 $@ --output=./$@.ps
+A2PSTMP   = ./tmp
+DOCS      = ./docs
+ps:
+	rm -f /tmp/*.ps /tmp/*.pdf
+	${A2PS2S1C} Cargo.toml
+	${A2PS2S1C}  Makefile
+	(cd ./src/bin ;../../${A2PS2S1C} agent.rs)
+	(cd ./src ;../${A2PS2S1C} cli.yaml )
+	(cd ./src ;../${A2PS2S1C} crypto.rs )
+	(cd ./src ;../${A2PS2S1C} lib.rs )
+	(cd ./src ;../${A2PS2S1C} main.rs )
+
+pdf:
+	cd  /tmp;ps2pdf Cargo.toml.ps  Cargo.toml.pdf
+	cd  /tmp;ps2pdf Makefile.ps    Makefile.pdf
+	cd  /tmp;ps2pdf agent.rs.ps    agent.rs.pdf
+	cd  /tmp;ps2pdf cli.yaml.ps    cli.yaml.pdf
+	cd  /tmp;ps2pdf crypto.rs.ps   crypto.rs.pdf
+	cd  /tmp;ps2pdf lib.rs.ps      lib.rs.pdf
+	cd  /tmp;ps2pdf main.rs.ps     main.rs.pdf
+	cp /tmp/*.pdf ../docs
