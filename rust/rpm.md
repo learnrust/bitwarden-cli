@@ -1,3 +1,5 @@
+cargo install cargo-rpm
+
 [pi@centos7 rust]$ cargo rpm init
      Created /home/pi/github/bitwarden-cli/rust/.rpm
     Rendered /home/pi/github/bitwarden-cli/rust/.rpm/bitwarden.spec
