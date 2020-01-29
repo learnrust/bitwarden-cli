@@ -1,4 +1,5 @@
 * for CentOS 7
 ```
-yum install -y dpkg
+sudo yum install -y dpkg
+cargo install cargo-deb
 ```
