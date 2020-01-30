@@ -12,9 +12,6 @@ clean:
 	rm -rf dist/
 	rm -rf build/
 test:
-	#pytest
-	# for Fedora/CentOS
-	#/usr/bin/py.test-3
-	/usr/bin/py.test
+	/usr/bin/py.test-3.6
 
 .PHONY: release test
