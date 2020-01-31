@@ -15,4 +15,6 @@ clean:
 test:
 	/usr/bin/py.test-3.6
 
+install: 
+	sudo python3 -m easy_install dist/bitwarden-0.4.0-py3.6.egg 
 .PHONY: release test
